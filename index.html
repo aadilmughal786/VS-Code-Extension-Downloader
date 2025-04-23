@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VS Code Extension Downloader</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@1.5.7/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
+  <body>
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle">
+      <svg
+        id="light-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        width="24"
+        height="24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+        />
+      </svg>
+      <svg
+        id="dark-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        width="24"
+        height="24"
+        style="display: none"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21.752 15.002A9.718 9.718 0 0 1 12.002 21c-5.385 0-9.75-4.365-9.75-9.75a9.718 9.718 0 0 1 6.001-9.25 7.501 7.501 0 0 0 13.5 7 9.76 9.76 0 0 1-.001 6.002z"
+        />
+      </svg>
+    </button>
+    <header class="container">
+      <h1>VS Code Extension Downloader</h1>
+      <p>Generate and download `.vsix` files directly from the Marketplace!</p>
+    </header>
+    <main class="container">
+      <form id="extension-form">
+        <label for="extension-url">Enter Marketplace URL:</label>
+        <input
+          type="url"
+          id="extension-url"
+          placeholder="https://marketplace.visualstudio.com/items?itemName=ms-python.python"
+          required
+        />
+        <button type="submit">
+          Generate Download Link
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+            width="24"
+            height="24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15M9 12l3 3m0 0 3-3m-3 3V2.25"
+            />
+          </svg>
+        </button>
+      </form>
+      <div id="result" style="display: none">
+        <p>Your `.vsix` download link:</p>
+        <a href="#" id="download-link" target="_blank">Download Extension</a>
+      </div>
+    </main>
+    <footer class="container">
+      <p>
+        Created by
+        <a href="https://github.com/aadilmughal786" target="_blank"
+          >aadilmughal786</a
+        >
+      </p>
+    </footer>
+    <script src="src/js/app.js"></script>
+    <script src="src/js/theme.js"></script>
+  </body>
+</html>
